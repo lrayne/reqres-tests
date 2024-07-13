@@ -39,6 +39,7 @@ def test_get_existing_user_by_id():
     body = response.json()
 
     assert response.status_code == 200
+    assert body['data']['id'] == int(id)
     validate(body, schema=single_user)
 
 
